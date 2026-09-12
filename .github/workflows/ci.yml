@@ -1,0 +1,93 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13.7"
+
+      - name: Record toolchain
+        run: |
+          python --version
+          c++ --version
+
+      - name: Run complete verification gate
+        run: make check PYTHON=python CXX=c++
+
+      - name: Assert deterministic release manifest
+        run: |
+          python build_release_manifest.py
+          git diff --exit-code -- release-manifest.sha256
+
+      - name: Assert tracked tree unchanged
+        if: always()
+        run: |
+          git diff --check
+          git diff --exit-code
+
+  paper:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install pinned Tectonic
+        run: |
+          mkdir -p .tmp-tools/tectonic
+          curl -fL --retry 4 --retry-all-errors \
+            https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.17.0/tectonic-0.17.0-x86_64-unknown-linux-musl.tar.gz \
+            -o .tmp-tools/tectonic/tectonic.tar.gz
+          echo \
+            "8533d07f9ccbd7a65824b9e0459041bca34af1eb33daba48f59215593753a3b7  .tmp-tools/tectonic/tectonic.tar.gz" \
+            | sha256sum -c -
+          tar -xzf .tmp-tools/tectonic/tectonic.tar.gz \
+            -C .tmp-tools/tectonic
+          echo \
+            "a98aa59ad5c1df39a6c9e56cbfc5088f2b11d6c179c0130b97998e4bd46a46da  .tmp-tools/tectonic/tectonic" \
+            | sha256sum -c -
+          test "$(.tmp-tools/tectonic/tectonic --version)" = \
+            "Tectonic 0.17.0"
+
+      - name: Build technical report
+        run: |
+          mkdir -p .tmp-paper
+          SOURCE_DATE_EPOCH=1789171200 FORCE_SOURCE_DATE=1 \
+            XDG_CACHE_HOME="$PWD/.tmp-tectonic-cache" \
+            .tmp-tools/tectonic/tectonic -X compile paper/main.tex \
+              --outdir .tmp-paper --keep-logs
+          test -s .tmp-paper/main.pdf
+          test "$(head -c 5 .tmp-paper/main.pdf)" = "%PDF-"
+          ! grep -E \
+            "Overfull|Underfull|LaTeX Warning|Undefined" \
+            .tmp-paper/main.log
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: quaternary-covering-code-8-4-report
+          path: |
+            .tmp-paper/main.pdf
+            .tmp-paper/main.log
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Assert tracked tree unchanged
+        if: always()
+        run: git diff --exit-code
