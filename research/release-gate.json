@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "project": "quaternary-covering-code-8-4-upper-bound",
+  "version": "0.1.0",
+  "evaluated_at": "2026-09-11",
+  "candidate_claim": "A retained 27-word quaternary length-8 code has exact covering radius 4 under three exhaustive verifier paths, proving K_4(8,4) <= 27 and improving the audited upper bound 28 by one. A retained 26-word candidate has five radius-4 holes.",
+  "gates": {
+    "significant_original_result": true,
+    "prior_art_refreshed": true,
+    "dated_prior_art_audit_completed": true,
+    "claim_scope_audited": true,
+    "limitations_documented": true,
+    "primary_exhaustive_verifier_passes": true,
+    "independent_exhaustive_verifier_passes": true,
+    "direct_cpp_verifier_passes": true,
+    "evidence_audit_passes": true,
+    "global_interval_improved": true,
+    "verified_26_word_code_found": false,
+    "exact_value_established": false,
+    "external_mathematical_review_passed": false,
+    "paper_build_and_inspection_passes": true,
+    "clean_hosted_ci_passes": false,
+    "public_result_repository_verified": false,
+    "immutable_public_release_verified": false,
+    "paper_inclusive_archive_ready": false,
+    "zenodo_deposit_verified": false
+  },
+  "decision": "hold",
+  "reason": "The mathematical significance, local verification, and paper inspection gates pass. Publication remains on hold until external review, clean hosted replay, a verified public repository, and an immutable paper-inclusive release pass. Zenodo must follow that public release.",
+  "doi": {
+    "version": "not yet assigned",
+    "concept": "not yet assigned"
+  }
+}

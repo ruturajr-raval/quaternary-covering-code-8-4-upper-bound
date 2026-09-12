@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "project": "quaternary-covering-code-8-4-upper-bound",
+  "version": "0.1.0",
+  "author": "Ruturaj R Raval",
+  "affiliation": "Independent Researcher",
+  "orcid": "0000-0003-4930-8981",
+  "status": "prerelease research",
+  "audit_date": "2026-09-11",
+  "target": {
+    "parameter": "K_4(8,4)",
+    "starting_interval": "13 <= K_4(8,4) <= 28",
+    "construction_route": "Find and independently verify a code with fewer than 28 words.",
+    "next_route": "Find and independently verify a 26-word code or improve the five-hole frontier."
+  },
+  "problem": {
+    "parent_problem": "Determine the exact quaternary covering number K_4(8,4).",
+    "ambient_words": 65536,
+    "starting_lower_bound": 13,
+    "starting_upper_bound": 28,
+    "audited_source_period": "The upper bound 28 is attributed to Ostergard, 1991, and the lower bound 13 to Keri, 2008."
+  },
+  "current_supported_claim": {
+    "statement": "The retained 27-word quaternary length-8 code has exact covering radius 4 under two independent exhaustive Python implementations and a separately written direct-distance C++ verifier. Therefore K_4(8,4) <= 27, improving the audited upper bound 28 by one. The retained 26-word candidate has exact covering radius 5 and five radius-4 holes."
+  },
+  "verification": {
+    "verified_code_size": 27,
+    "exact_covering_radius": 4,
+    "ambient_words_checked": 65536,
+    "independent_python_verifiers": 2,
+    "direct_cpp_verifiers": 1,
+    "best_retained_26_word_hole_count": 5,
+    "global_upper_bound_improved": true,
+    "exact_value_established": false
+  },
+  "limitations": [
+    "No 26-word covering code is established.",
+    "No lower-bound improvement is claimed.",
+    "The exact value of K_4(8,4) remains open.",
+    "The five-hole near-cover and failed searches are not exclusion evidence.",
+    "The bounded prior-art review cannot exclude inaccessible, unpublished, unindexed, or later work.",
+    "External mathematical review and peer review remain absent.",
+    "No public repository, immutable release, Zenodo archive, or DOI exists."
+  ],
+  "doi": {
+    "version": "not yet assigned",
+    "concept": "not yet assigned"
+  }
+}

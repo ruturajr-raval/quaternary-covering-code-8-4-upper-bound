@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata below."
+title: "Quaternary Covering Code K_4(8,4) Upper-Bound Workbench"
+type: software
+authors:
+  - family-names: Raval
+    given-names: Ruturaj R
+    affiliation: Independent Researcher
+    orcid: "https://orcid.org/0000-0003-4930-8981"
+repository-code: "https://github.com/ruturajr-raval/quaternary-covering-code-8-4-upper-bound"
+version: 0.1.0
+license: MIT
+abstract: >-
+  Reproducible prerelease package for K_4(8,4). A verified 27-word
+  quaternary length-8 code has exact covering radius 4 and improves the
+  audited upper bound from 28 to 27. A retained 26-word candidate has
+  exactly five radius-4 holes.
+keywords:
+  - covering codes
+  - coding theory
+  - exhaustive verification
+  - Hamming space
+  - construction

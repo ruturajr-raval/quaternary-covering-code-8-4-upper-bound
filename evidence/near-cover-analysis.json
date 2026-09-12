@@ -1,0 +1,42 @@
+{
+  "claim_boundary": "The retained 26-word candidate is not a covering code. Its five holes and all failed searches are not lower-bound evidence.",
+  "computed": {
+    "code_size": 26,
+    "diameter": 8,
+    "direct_cpp_verifier_expected": {
+      "exact_covering_radius": 5,
+      "hole_count": 5
+    },
+    "distance_distribution": {
+      "0": 26,
+      "1": 624,
+      "2": 6528,
+      "3": 32533,
+      "4": 25820,
+      "5": 5
+    },
+    "exact_covering_radius": 5,
+    "hole_count": 5,
+    "holes": [
+      "02131221",
+      "12013220",
+      "13332010",
+      "20222020",
+      "33310232"
+    ],
+    "independent_python_verifier_agrees": true,
+    "pair_distance_distribution": {
+      "4": 4,
+      "5": 39,
+      "6": 164,
+      "7": 115,
+      "8": 3
+    },
+    "sha256": "a221b79bce498a0a44a95f76640111315e838872f4e7b1beec5ed23c3909abd4",
+    "source": "near-cover-26-5-holes.txt",
+    "valid": false
+  },
+  "generated_at": "2026-09-11",
+  "parameter": "K_4(8,4)",
+  "schema_version": 1
+}

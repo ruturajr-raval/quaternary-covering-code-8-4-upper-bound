@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+
+\title{A 27-Word Quaternary Covering Code of Length Eight and Radius Four}
+\author{Ruturaj R Raval\\Independent Researcher\\
+ORCID: 0000-0003-4930-8981}
+\date{September 11, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give a quaternary length-8 covering code with 27 words and covering
+radius 4. Three exhaustive verifier paths check all $4^8=65536$ ambient
+words. Relative to the audited table interval
+$13 \leq K_4(8,4) \leq 28$, the construction proves
+$K_4(8,4) \leq 27$. A retained 26-word candidate has exact covering radius
+5 and five radius-4 holes. No lower-bound improvement or exact value is
+claimed.
+\end{abstract}
+
+\section{Problem and prior frontier}
+
+Let $K_q(n,R)$ be the least cardinality of a subset of
+$\{0,\ldots,q-1\}^n$ whose radius-$R$ Hamming balls cover the full space.
+For the quaternary cell considered here, one radius-4 ball contains
+\[
+  \sum_{i=0}^{4} \binom{8}{i}3^i = 7459
+\]
+of the $4^8=65536$ ambient words.
+
+The frozen Keri table records the cell as \texttt{w 13-28 m}. Its
+bibliography mapping attributes the lower bound 13 to Keri's 2008 work and
+the upper bound 28 to Ostergard's 1991 construction work. A dated
+2026 review found that the current semidefinite lower-bound work retains 13
+for this cell, while the 2026 large-alphabet upper-bound campaign begins at
+alphabet size 5 and does not cover the quaternary case.
+
+\section{Construction}
+
+The code is
+\begin{center}
+\begin{tabular}{rrrrr}
+\toprule
+33000103 & 30323201 & 20203300 & 01133120 & 03102001\\
+10113112 & 12103310 & 21111302 & 00221133 & 12232203\\
+30131330 & 32210021 & 03211210 & 02021132 & 23233032\\
+31322013 & 02330312 & 13301023 & 31222322 & 11300231\\
+01013333 & 13322321 & 22312130 & 30002222 & 23120223\\
+21031111 & 10020000 & & &\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{theorem}
+The displayed code has covering radius four. Consequently,
+\[
+  K_4(8,4) \leq 27.
+\]
+\end{theorem}
+
+\begin{proof}
+The three verification programs included with the source package enumerate
+all 65536 ambient words and compute each word's minimum Hamming distance to
+the 27 centers. Each reports maximum minimum distance four and no uncovered
+word at radius four.
+\end{proof}
+
+\section{Independent verification}
+
+The first Python implementation represents words as integer tuples and
+enumerates the ambient space with a Cartesian product. The second represents
+words as strings and has separate parsing and distance loops. A C++ program
+decodes every integer from 0 through 65535 in base four and computes direct
+distances.
+
+The two Python implementations agree on the complete nearest-distance
+distribution:
+\[
+\begin{array}{c|rrrrr}
+d & 0 & 1 & 2 & 3 & 4\\
+\hline
+\# & 27 & 648 & 6750 & 33100 & 25011.
+\end{array}
+\]
+The fixture SHA-256 is
+\begin{center}
+\texttt{1f83a962906943f04be960e275138ab75}\\
+\texttt{08d4a45cec62e58730504b873363b39}.
+\end{center}
+
+\section{The 26-word frontier}
+
+A retained 26-word candidate has nearest-distance distribution
+\[
+\begin{array}{c|rrrrrr}
+d & 0 & 1 & 2 & 3 & 4 & 5\\
+\hline
+\# & 26 & 624 & 6528 & 32533 & 25820 & 5.
+\end{array}
+\]
+Its five radius-4 holes are
+\[
+\begin{split}
+&02131221,\quad 12013220,\quad 13332010,\\
+&20222020,\quad 33310232.
+\end{split}
+\]
+This candidate is not a covering code. Five bounded repair runs ending at
+the same hole count are construction-search records only and carry no
+lower-bound implication.
+
+\section{Reproducibility and limitations}
+
+The source package contains the code fixtures, both Python verifiers, the
+C++ verifier, machine-readable evidence, mutation tests, source attribution,
+and a closed-world SHA-256 manifest. The complete local gate is
+\texttt{make check}.
+
+The result does not improve the lower bound 13, establish a 26-word code,
+prove optimality of 27, or determine $K_4(8,4)$. The prior-art review cannot
+exclude inaccessible, unpublished, unindexed, or later work. External
+mathematical review and peer review remain pending.
+
+\end{document}

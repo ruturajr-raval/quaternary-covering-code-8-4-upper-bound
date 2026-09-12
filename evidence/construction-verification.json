@@ -1,0 +1,43 @@
+{
+  "computed": {
+    "code_size": 27,
+    "diameter": 8,
+    "direct_cpp_verifier_expected": {
+      "exact_covering_radius": 4,
+      "hole_count": 0
+    },
+    "distance_distribution": {
+      "0": 27,
+      "1": 648,
+      "2": 6750,
+      "3": 33100,
+      "4": 25011
+    },
+    "exact_covering_radius": 4,
+    "hole_count": 0,
+    "holes": [],
+    "independent_python_verifier_agrees": true,
+    "pair_distance_distribution": {
+      "3": 1,
+      "4": 6,
+      "5": 43,
+      "6": 170,
+      "7": 128,
+      "8": 3
+    },
+    "sha256": "1f83a962906943f04be960e275138ab7508d4a45cec62e58730504b873363b39",
+    "source": "code-27.txt",
+    "valid": true
+  },
+  "generated_at": "2026-09-11",
+  "global_upper_bound_improved": true,
+  "improved_interval": "13 <= K_4(8,4) <= 27",
+  "parameter": "K_4(8,4)",
+  "schema_version": 1,
+  "starting_interval": "13 <= K_4(8,4) <= 28",
+  "verification_paths": [
+    "integer exhaustive Python verifier",
+    "string exhaustive Python verifier",
+    "direct-distance C++ verifier"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "audit_date": "2026-09-11",
+  "comparison_pilots": [
+    {
+      "best_holes": 24,
+      "parameter": "K_4(10,6)",
+      "seconds": 45,
+      "target_size": 15
+    },
+    {
+      "best_holes": 2284,
+      "parameter": "K_4(9,5)",
+      "seconds": 45,
+      "target_size": 15
+    },
+    {
+      "best_holes": 3767,
+      "parameter": "K_4(11,7)",
+      "seconds": 45,
+      "target_size": 10
+    },
+    {
+      "best_holes": 0,
+      "parameter": "K_4(8,4)",
+      "seconds_to_cover": 9.77,
+      "target_size": 27
+    }
+  ],
+  "publication_decision": "hold",
+  "publication_reason": "The mathematical significance gate passes, but external review, a public repository, immutable release, and paper-inclusive archival remain pending.",
+  "required_release_order": [
+    "public repository",
+    "immutable paper-inclusive release",
+    "Zenodo deposit"
+  ],
+  "schema_version": 1,
+  "selected_parameter": "K_4(8,4)",
+  "size_26_campaign": {
+    "best_holes": 5,
+    "budgets_seconds": [
+      90,
+      120,
+      120,
+      120,
+      120
+    ],
+    "proof_value": "none",
+    "runs": 5,
+    "runs_at_best": 5
+  }
+}

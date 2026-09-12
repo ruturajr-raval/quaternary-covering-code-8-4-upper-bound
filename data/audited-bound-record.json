@@ -1,0 +1,16 @@
+{
+  "audit_date": "2026-09-11",
+  "parameter": "K_4(8,4)",
+  "frozen_table": {
+    "lower_bound": 13,
+    "lower_key": "w",
+    "lower_attribution": "Keri, 2008",
+    "upper_bound": 28,
+    "upper_key": "m",
+    "upper_attribution": "Ostergard, 1991",
+    "raw_cell": "w 13-28 m",
+    "source": "Keri quaternary/quinary covering-code table, frozen 2011"
+  },
+  "frozen_bounds_json_sha256": "7efb0122b7d6a60302194455953591c3e9842a8e7eff9b6f8f49858de3f7522c",
+  "current_scope_note": "The 2026 large-alphabet upper-bound campaign covers q=5 through q=21 and does not supersede this q=4 cell."
+}
