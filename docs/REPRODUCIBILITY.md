@@ -32,6 +32,14 @@ The search engine is outside the theorem trust boundary. Verification starts
 from the committed candidate text and exhaustively computes direct Hamming
 distances over all 65,536 ambient words.
 
+## Hosted Replay
+
+The public `ci` workflow runs `make check` on Ubuntu 24.04 with Python
+3.13.7 and a C++17 compiler. A separate job installs checksum-pinned Tectonic
+0.17.0, rebuilds the technical report, rejects TeX warnings, and uploads the
+PDF and build log. Bootstrap run `34660831919` completed successfully on
+2026-09-12.
+
 ## Expected Resources
 
 The full local gate is CPU-only and completes on a commodity workstation.

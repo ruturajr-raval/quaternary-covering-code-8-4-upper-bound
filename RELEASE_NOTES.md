@@ -11,6 +11,7 @@ Candidate version: `v0.1.0`.
 - Retains one 26-word candidate with exact radius 5 and five holes.
 - Adds deterministic evidence, tests, source attribution, and a closed-world
   manifest.
+- Adds a public source repository and clean hosted verifier and paper jobs.
 - Does not improve the lower bound or determine the exact value.
-- Holds public release and Zenodo archival until the public repository,
-  external review, immutable release, and remaining publication gates pass.
+- Holds the immutable release and Zenodo archival until external review and
+  the remaining publication gates pass.

@@ -11,6 +11,7 @@
 | Problem | Determine the exact value of `K_4(8,4)` |
 | Current result | A verified 27-word code proves `K_4(8,4) <= 27`; one retained 26-word candidate has exactly five holes |
 | Result type | Project-original verified upper-bound improvement relative to the audited table frontier |
+| Public repository | [GitHub](https://github.com/ruturajr-raval/quaternary-covering-code-8-4-upper-bound) |
 | Release | not yet released |
 | Version DOI | not yet assigned |
 | Concept DOI | not yet assigned |
@@ -210,9 +211,10 @@ bound 13, or determine the exact value of `K_4(8,4)`. It does not prove that
 
 The five-hole candidate and every failed search are not exclusion evidence.
 The bounded prior-art review does not prove universal novelty or priority.
-External mathematical review and peer review remain absent. No public
-repository, tagged release, Zenodo archive, DOI, or dissemination event is
-claimed.
+External mathematical review issue
+[#1](https://github.com/ruturajr-raval/quaternary-covering-code-8-4-upper-bound/issues/1)
+remains open, and peer review is absent. No tagged release, Zenodo archive,
+DOI, or dissemination event is claimed.
 
 ## Significance And Use
 
@@ -229,18 +231,19 @@ improvement.
 ## Remaining Work And Future Directions
 
 The remaining limitation is that no 26-word cover or matching lower-bound
-certificate is known here. The next route is a verified 26-word cover. The retained
-five-hole code should be attacked by multiword replacements, orbit-aware
-repair, and deletion-repair from independently generated 27-word covers.
+certificate is known here. The next route is a verified 26-word cover. The
+retained five-hole code should be attacked by multiword replacements,
+orbit-aware repair, and deletion-repair from independently generated
+27-word covers.
 
 A proof route would require a complete, independently audited exclusion for
 all codes below a stated size. Search timeouts are not acceptable evidence.
 
-Before publication, repeat the prior-art review, obtain external mathematical
-review, preserve the passing paper build and visual inspection at the release
-commit, and pass clean hosted replay. Place further construction search on
-hold if a bounded campaign neither finds a 26-word cover nor improves the
-five-hole frontier.
+Before publication, resolve the external mathematical review, refresh prior
+art at the release date, and preserve the passing hosted verifier and paper
+jobs at the release commit. Place further construction search on hold if a
+bounded campaign neither finds a 26-word cover nor improves the five-hole
+frontier.
 
 ## Repository Layout
 
@@ -255,6 +258,7 @@ five-hole frontier.
 - `docs/` contains the claim ledger, prior-art audit, reproducibility guide,
   and research plan.
 - `research/` contains the machine-readable claim and release gate.
+- `.github/workflows/ci.yml` performs clean hosted verifier and paper replay.
 - `paper/` contains the technical report source and deferred-submission
   metadata.
 
@@ -263,15 +267,17 @@ five-hole frontier.
 Release status: not yet released. Version DOI: not yet assigned. Concept DOI:
 not yet assigned.
 
-The mathematical significance gate passes locally, but the publication gate
-remains on hold. No public result repository currently exists. The required
-order is:
+The mathematical significance, public repository, and clean hosted replay
+gates pass. External mathematical review issue
+[#1](https://github.com/ruturajr-raval/quaternary-covering-code-8-4-upper-bound/issues/1)
+remains open, so the publication gate remains on hold. The remaining order is:
 
-1. create and verify the public result repository;
-2. create an immutable paper-inclusive release from an audited commit; and
+1. resolve external review and reverify the final release commit;
+2. create an immutable paper-inclusive release; and
 3. deposit the byte-matching release set in Zenodo and verify the DOI record.
 
-Zenodo must not precede the public repository and immutable release.
+The public repository now exists, but Zenodo must not precede the immutable
+release.
 
 ## Authorship
 

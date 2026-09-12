@@ -18,5 +18,5 @@
     "Hamming space",
     "construction"
   ],
-  "notes": "Prerelease metadata only. The public repository and immutable paper-inclusive release must exist before any Zenodo deposit."
+  "notes": "Prerelease metadata only. The public repository exists, but an immutable paper-inclusive release must precede any Zenodo deposit."
 }

@@ -31,6 +31,16 @@ def main() -> int:
     selection = expected["selection-pilot.json"]
     if selection["publication_decision"] != "hold":
         raise ValueError("publication decision changed")
+    if selection["public_repository"]["verified"] is not True:
+        raise ValueError("public repository verification changed")
+    if selection["hosted_ci"]["conclusion"] != "success":
+        raise ValueError("hosted CI status changed")
+    if selection["external_review"] != {
+        "repository_issue": 1,
+        "status": "open",
+        "gate_passed": False,
+    }:
+        raise ValueError("external review status changed")
     if selection["required_release_order"] != [
         "public repository",
         "immutable paper-inclusive release",

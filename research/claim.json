@@ -31,6 +31,9 @@
     "direct_cpp_verifiers": 1,
     "best_retained_26_word_hole_count": 5,
     "global_upper_bound_improved": true,
+    "public_repository_verified": true,
+    "clean_hosted_ci_passes": true,
+    "hosted_ci_bootstrap_run_id": 34660831919,
     "exact_value_established": false
   },
   "limitations": [
@@ -39,8 +42,8 @@
     "The exact value of K_4(8,4) remains open.",
     "The five-hole near-cover and failed searches are not exclusion evidence.",
     "The bounded prior-art review cannot exclude inaccessible, unpublished, unindexed, or later work.",
-    "External mathematical review and peer review remain absent.",
-    "No public repository, immutable release, Zenodo archive, or DOI exists."
+    "External mathematical review issue 1 remains open and peer review is absent.",
+    "No immutable release, Zenodo archive, or DOI exists."
   ],
   "doi": {
     "version": "not yet assigned",

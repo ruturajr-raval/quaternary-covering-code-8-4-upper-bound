@@ -154,9 +154,33 @@ def records() -> dict[str, object]:
             "publication_decision": "hold",
             "publication_reason": (
                 "The mathematical significance gate passes, but external "
-                "review, a public repository, immutable release, and "
-                "paper-inclusive archival remain pending."
+                "review, an immutable release, and paper-inclusive archival "
+                "remain pending."
             ),
+            "publication_readiness_observed_at": "2026-09-12",
+            "public_repository": {
+                "repository": (
+                    "ruturajr-raval/"
+                    "quaternary-covering-code-8-4-upper-bound"
+                ),
+                "visibility": "public",
+                "default_branch": "main",
+                "verified": True,
+            },
+            "hosted_ci": {
+                "workflow": "ci",
+                "bootstrap_run_id": 34660831919,
+                "commit": (
+                    "d9549e699f63050bc2ea16033b842b2b89da44e6"
+                ),
+                "conclusion": "success",
+                "jobs": ["verify", "paper"],
+            },
+            "external_review": {
+                "repository_issue": 1,
+                "status": "open",
+                "gate_passed": False,
+            },
             "required_release_order": [
                 "public repository",
                 "immutable paper-inclusive release",

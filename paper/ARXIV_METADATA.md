@@ -34,8 +34,8 @@ five radius-4 holes. No lower-bound improvement or exact value is claimed.
 
 ## Comments
 
-Prerelease package. External mathematical review, final public repository,
-immutable release, and archival identifier are pending.
+Prerelease package. The public repository and hosted replay pass. External
+mathematical review, immutable release, and archival identifier are pending.
 
 ## License Plan
 

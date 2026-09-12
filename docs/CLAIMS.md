@@ -18,4 +18,5 @@ all optimal codes.
 
 The five-hole frontier and failed searches are not lower-bound evidence. The
 bounded prior-art audit does not establish universal priority. External
-review, public release, archival, and DOI assignment are not claimed.
+review, immutable public release, archival, and DOI assignment are not
+claimed. The existence of a public source repository is not a release claim.

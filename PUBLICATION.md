@@ -54,21 +54,21 @@ generated with third-party engines outside this package.
 ## Review Status
 
 Local fixture, verifier, evidence, source-scope, claim-boundary, paper-build,
-and visual-inspection audits pass. External mathematical review, hosted
-replay, and publication review remain pending.
+visual-inspection, public-repository, and hosted-replay audits pass. External
+mathematical review issue `#1` remains open.
 
 ## Archive And Citation
 
-Candidate `v0.1.0` is not released. No public result repository, immutable
-release, compiled release paper, archive, version DOI, or concept DOI is
-claimed.
+Candidate `v0.1.0` is not released. The public result repository exists, but
+no immutable release, compiled release paper, archive, version DOI, or
+concept DOI is claimed.
 
-The required order is public repository verification, immutable
-paper-inclusive release, then a byte-matching Zenodo deposit and DOI
-verification.
+Public repository verification is complete. The remaining order is an
+immutable paper-inclusive release, then a byte-matching Zenodo deposit and
+DOI verification.
 
 ## Remaining Acceptance Gate
 
-Publication requires refreshed prior art, external mathematical review,
-clean hosted replay, public repository verification, and an immutable
-paper-inclusive release. Zenodo follows that release.
+Publication requires release-date prior-art refresh, external mathematical
+review, final-commit hosted replay, and an immutable paper-inclusive release.
+Zenodo follows that release.

@@ -27,6 +27,8 @@ the verified 27-word theorem regardless.
 
 ## Publication Sequence
 
-After refreshed prior art, external review, paper inspection, and hosted
-replay, create the public repository and immutable release. Create the Zenodo
-deposit only after that release exists and its assets are final.
+The public repository and initial hosted replay now pass. Resolve external
+review issue `#1`, refresh prior art at the release date, and reverify the
+final release commit before creating an immutable paper-inclusive release.
+Create the Zenodo deposit only after that release exists and its assets are
+final.
