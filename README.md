@@ -184,6 +184,14 @@ Inspect the 26-word frontier:
 python3 analyze_near_cover.py data/near-cover-26-5-holes.txt
 ```
 
+Build and verify the paper-inclusive candidate release assets with Tectonic
+0.17.0:
+
+```bash
+make release-assets TECTONIC=/path/to/tectonic
+make verify-release-assets
+```
+
 The search campaign is not required to verify the theorem. The committed
 code fixture and exhaustive verifiers are the trust boundary.
 
@@ -259,6 +267,8 @@ frontier.
   and research plan.
 - `research/` contains the machine-readable claim and release gate.
 - `.github/workflows/ci.yml` performs clean hosted verifier and paper replay.
+- `tools/` builds and verifies deterministic paper-inclusive candidate
+  release assets.
 - `paper/` contains the technical report source and deferred-submission
   metadata.
 
@@ -268,7 +278,8 @@ Release status: not yet released. Version DOI: not yet assigned. Concept DOI:
 not yet assigned.
 
 The mathematical significance, public repository, and clean hosted replay
-gates pass. External mathematical review issue
+gates pass, and deterministic paper-inclusive candidate assets are ready.
+External mathematical review issue
 [#1](https://github.com/ruturajr-raval/quaternary-covering-code-8-4-upper-bound/issues/1)
 remains open, so the publication gate remains on hold. The remaining order is:
 

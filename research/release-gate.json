@@ -22,7 +22,7 @@
     "clean_hosted_ci_passes": true,
     "public_result_repository_verified": true,
     "immutable_public_release_verified": false,
-    "paper_inclusive_archive_ready": false,
+    "paper_inclusive_archive_ready": true,
     "zenodo_deposit_verified": false
   },
   "external_review_request": {

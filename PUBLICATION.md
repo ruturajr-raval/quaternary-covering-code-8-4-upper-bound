@@ -54,14 +54,15 @@ generated with third-party engines outside this package.
 ## Review Status
 
 Local fixture, verifier, evidence, source-scope, claim-boundary, paper-build,
-visual-inspection, public-repository, and hosted-replay audits pass. External
-mathematical review issue `#1` remains open.
+visual-inspection, public-repository, hosted-replay, and deterministic
+candidate-asset audits pass. External mathematical review issue `#1` remains
+open.
 
 ## Archive And Citation
 
-Candidate `v0.1.0` is not released. The public result repository exists, but
-no immutable release, compiled release paper, archive, version DOI, or
-concept DOI is claimed.
+Candidate `v0.1.0` is not released. A deterministic PDF, paper-source archive,
+and checksum manifest are reproducible, but no immutable release, Zenodo
+archive, version DOI, or concept DOI is claimed.
 
 Public repository verification is complete. The remaining order is an
 immutable paper-inclusive release, then a byte-matching Zenodo deposit and

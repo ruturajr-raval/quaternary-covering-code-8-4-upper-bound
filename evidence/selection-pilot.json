@@ -41,6 +41,13 @@
     ],
     "workflow": "ci"
   },
+  "paper_inclusive_archive": {
+    "asset_count": 3,
+    "deterministic_double_build_passes": true,
+    "published": false,
+    "ready": true,
+    "version": "v0.1.0"
+  },
   "public_repository": {
     "default_branch": "main",
     "repository": "ruturajr-raval/quaternary-covering-code-8-4-upper-bound",

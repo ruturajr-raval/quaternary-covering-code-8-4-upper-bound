@@ -65,25 +65,36 @@ jobs:
           test "$(.tmp-tools/tectonic/tectonic --version)" = \
             "Tectonic 0.17.0"
 
-      - name: Build technical report
+      - name: Build paper-inclusive candidate assets
         run: |
-          mkdir -p .tmp-paper
-          SOURCE_DATE_EPOCH=1789171200 FORCE_SOURCE_DATE=1 \
-            XDG_CACHE_HOME="$PWD/.tmp-tectonic-cache" \
-            .tmp-tools/tectonic/tectonic -X compile paper/main.tex \
-              --outdir .tmp-paper --keep-logs
-          test -s .tmp-paper/main.pdf
-          test "$(head -c 5 .tmp-paper/main.pdf)" = "%PDF-"
-          ! grep -E \
-            "Overfull|Underfull|LaTeX Warning|Undefined" \
-            .tmp-paper/main.log
+          make release-assets \
+            PYTHON=python \
+            TECTONIC="$PWD/.tmp-tools/tectonic/tectonic"
+          make verify-release-assets PYTHON=python
 
-      - name: Upload report artifact
+      - name: Assert deterministic candidate assets
+        run: |
+          mkdir -p .tmp-first-assets
+          cp dist/release/* .tmp-first-assets/
+          make release-assets \
+            PYTHON=python \
+            TECTONIC="$PWD/.tmp-tools/tectonic/tectonic"
+          cmp \
+            .tmp-first-assets/quaternary-covering-code-8-4-upper-bound-v0.1.0-paper.pdf \
+            dist/release/quaternary-covering-code-8-4-upper-bound-v0.1.0-paper.pdf
+          cmp \
+            .tmp-first-assets/quaternary-covering-code-8-4-upper-bound-v0.1.0-paper-source.tar.gz \
+            dist/release/quaternary-covering-code-8-4-upper-bound-v0.1.0-paper-source.tar.gz
+          cmp .tmp-first-assets/SHA256SUMS dist/release/SHA256SUMS
+
+      - name: Upload candidate release assets
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: quaternary-covering-code-8-4-report
+          name: quaternary-covering-code-8-4-release-candidate
           path: |
-            .tmp-paper/main.pdf
+            dist/release/quaternary-covering-code-8-4-upper-bound-v0.1.0-paper.pdf
+            dist/release/quaternary-covering-code-8-4-upper-bound-v0.1.0-paper-source.tar.gz
+            dist/release/SHA256SUMS
             .tmp-paper/main.log
           if-no-files-found: error
           retention-days: 30

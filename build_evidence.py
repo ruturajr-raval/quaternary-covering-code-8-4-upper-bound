@@ -181,6 +181,13 @@ def records() -> dict[str, object]:
                 "status": "open",
                 "gate_passed": False,
             },
+            "paper_inclusive_archive": {
+                "version": "v0.1.0",
+                "asset_count": 3,
+                "deterministic_double_build_passes": True,
+                "ready": True,
+                "published": False,
+            },
             "required_release_order": [
                 "public repository",
                 "immutable paper-inclusive release",

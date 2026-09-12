@@ -30,5 +30,6 @@ the verified 27-word theorem regardless.
 The public repository and initial hosted replay now pass. Resolve external
 review issue `#1`, refresh prior art at the release date, and reverify the
 final release commit before creating an immutable paper-inclusive release.
-Create the Zenodo deposit only after that release exists and its assets are
-final.
+The deterministic PDF, paper-source archive, and checksums are prepared as
+candidate assets. Create the Zenodo deposit only after the immutable release
+exists and its assets are final.

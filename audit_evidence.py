@@ -41,6 +41,14 @@ def main() -> int:
         "gate_passed": False,
     }:
         raise ValueError("external review status changed")
+    if selection["paper_inclusive_archive"] != {
+        "version": "v0.1.0",
+        "asset_count": 3,
+        "deterministic_double_build_passes": True,
+        "ready": True,
+        "published": False,
+    }:
+        raise ValueError("paper-inclusive archive status changed")
     if selection["required_release_order"] != [
         "public repository",
         "immutable paper-inclusive release",

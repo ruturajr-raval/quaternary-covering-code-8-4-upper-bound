@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 .tmp-*/
+dist/
 paper/main.aux
 paper/main.log
 paper/main.out

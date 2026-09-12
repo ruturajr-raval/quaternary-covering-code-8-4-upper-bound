@@ -36,9 +36,23 @@ distances over all 65,536 ambient words.
 
 The public `ci` workflow runs `make check` on Ubuntu 24.04 with Python
 3.13.7 and a C++17 compiler. A separate job installs checksum-pinned Tectonic
-0.17.0, rebuilds the technical report, rejects TeX warnings, and uploads the
-PDF and build log. Bootstrap run `34660831919` completed successfully on
-2026-09-12.
+0.17.0, rebuilds the technical report, rejects TeX warnings, creates the
+normalized paper-source archive and checksums, repeats the build, compares
+the assets byte for byte, and uploads the candidate set. This workflow must
+pass on the final release commit.
+
+## Candidate Release Assets
+
+Run:
+
+```bash
+make release-assets TECTONIC=/path/to/tectonic
+make verify-release-assets
+```
+
+The generated `dist/release/` directory contains exactly the candidate PDF,
+paper-source archive, and `SHA256SUMS`. These files are release inputs, not a
+published release or Zenodo deposit.
 
 ## Expected Resources
 
